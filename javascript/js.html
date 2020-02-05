@@ -1,3 +1,12 @@
+<DOCTYPE !html>
+  <html>
+    <body>
+    </body>
+  
+<script>
+        //var test1 = "Їжак::: résd,$%& adùf";
+        //var test2 = XRegExp('([^?<first>\\pL ]+)');
+        //console.log(test1.replace(/[^\w\s]/gi, '') );
 const anagrammes = (stringA, stringB) => {
       var y = stringA.split("").sort().join(""),
         z = stringB.split("").sort().join("");
@@ -11,10 +20,10 @@ const anagrammes = (stringA, stringB) => {
 // y.sourceString.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
 // z.sourceString.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
 if (y === z){
-  return true;
+  console.log("true");
 }
 else{
-  return false;
+  console.log("false")
 }
 
 
@@ -55,10 +64,8 @@ class Stack {
     //return this.pile.pop();
     //this.pile.pop();
     
-
-    var a = this.pile[this.pile.length-1];
-    this.tab.splice(this.tab.length-1, 1);
-    return a;
+    this.pile.length = this.pile.length - 1;
+    return this.pile[this.pile.length-1];
 
   }
   peek(){
@@ -137,12 +144,20 @@ return x;
 
 };
 
-const spirale = (n) => {
+const matrix = (n) => {
 
-var matrix = [];
+var matrice = [];
+test = 1;
 for(var i=0; i<n; i++) {
-    matrix[n] = new Array(9);
+    matrice[i] = new Array(n);
+
+    if (i % 2 == 0){
+      for (var z = 0; z < matrice.lenght; z++){
+        matrice[i] = z;
+      }
+    }
 }
+return matrice;
 
 
 /**
@@ -196,11 +211,5 @@ const puissance4 = (grid) => {
  *   ) = 0
  */
 }
-
-module.exports = {
-  fizzBuzz,
-  puissance4,
-  spirale,
-  anagrammes,
-  Stack
-}
+</script>
+</html>
